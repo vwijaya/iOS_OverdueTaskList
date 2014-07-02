@@ -24,6 +24,7 @@
 		097CCB65196401B3004BC4C3 /* VWAddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097CCB64196401B3004BC4C3 /* VWAddTaskViewController.m */; };
 		097CCB68196401C9004BC4C3 /* VWDetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097CCB67196401C9004BC4C3 /* VWDetailTaskViewController.m */; };
 		097CCB6B196401DA004BC4C3 /* VWEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097CCB6A196401DA004BC4C3 /* VWEditTaskViewController.m */; };
+		097CCB6F19641104004BC4C3 /* VWTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 097CCB6E19641104004BC4C3 /* VWTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		097CCB67196401C9004BC4C3 /* VWDetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWDetailTaskViewController.m; sourceTree = "<group>"; };
 		097CCB69196401DA004BC4C3 /* VWEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWEditTaskViewController.h; sourceTree = "<group>"; };
 		097CCB6A196401DA004BC4C3 /* VWEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWEditTaskViewController.m; sourceTree = "<group>"; };
+		097CCB6D19641104004BC4C3 /* VWTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWTask.h; sourceTree = "<group>"; };
+		097CCB6E19641104004BC4C3 /* VWTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 		097CCB341964015F004BC4C3 /* Overdue Task List */ = {
 			isa = PBXGroup;
 			children = (
+				097CCB6C196410D8004BC4C3 /* model */,
 				097CCB3D1964015F004BC4C3 /* VWAppDelegate.h */,
 				097CCB3E1964015F004BC4C3 /* VWAppDelegate.m */,
 				097CCB401964015F004BC4C3 /* Main.storyboard */,
@@ -165,6 +169,15 @@
 				097CCB561964015F004BC4C3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		097CCB6C196410D8004BC4C3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				097CCB6D19641104004BC4C3 /* VWTask.h */,
+				097CCB6E19641104004BC4C3 /* VWTask.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +281,7 @@
 				097CCB6B196401DA004BC4C3 /* VWEditTaskViewController.m in Sources */,
 				097CCB65196401B3004BC4C3 /* VWAddTaskViewController.m in Sources */,
 				097CCB451964015F004BC4C3 /* VWViewController.m in Sources */,
+				097CCB6F19641104004BC4C3 /* VWTask.m in Sources */,
 				097CCB3B1964015F004BC4C3 /* main.m in Sources */,
 				097CCB3F1964015F004BC4C3 /* VWAppDelegate.m in Sources */,
 				097CCB68196401C9004BC4C3 /* VWDetailTaskViewController.m in Sources */,
