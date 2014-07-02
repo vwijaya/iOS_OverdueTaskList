@@ -21,6 +21,9 @@
 		097CCB501964015F004BC4C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097CCB321964015F004BC4C3 /* UIKit.framework */; };
 		097CCB581964015F004BC4C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 097CCB561964015F004BC4C3 /* InfoPlist.strings */; };
 		097CCB5A1964015F004BC4C3 /* Overdue_Task_ListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 097CCB591964015F004BC4C3 /* Overdue_Task_ListTests.m */; };
+		097CCB65196401B3004BC4C3 /* VWAddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097CCB64196401B3004BC4C3 /* VWAddTaskViewController.m */; };
+		097CCB68196401C9004BC4C3 /* VWDetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097CCB67196401C9004BC4C3 /* VWDetailTaskViewController.m */; };
+		097CCB6B196401DA004BC4C3 /* VWEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097CCB6A196401DA004BC4C3 /* VWEditTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,12 @@
 		097CCB551964015F004BC4C3 /* Overdue Task ListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Overdue Task ListTests-Info.plist"; sourceTree = "<group>"; };
 		097CCB571964015F004BC4C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		097CCB591964015F004BC4C3 /* Overdue_Task_ListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Overdue_Task_ListTests.m; sourceTree = "<group>"; };
+		097CCB63196401B3004BC4C3 /* VWAddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWAddTaskViewController.h; sourceTree = "<group>"; };
+		097CCB64196401B3004BC4C3 /* VWAddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWAddTaskViewController.m; sourceTree = "<group>"; };
+		097CCB66196401C9004BC4C3 /* VWDetailTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWDetailTaskViewController.h; sourceTree = "<group>"; };
+		097CCB67196401C9004BC4C3 /* VWDetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWDetailTaskViewController.m; sourceTree = "<group>"; };
+		097CCB69196401DA004BC4C3 /* VWEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWEditTaskViewController.h; sourceTree = "<group>"; };
+		097CCB6A196401DA004BC4C3 /* VWEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWEditTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +126,12 @@
 				097CCB401964015F004BC4C3 /* Main.storyboard */,
 				097CCB431964015F004BC4C3 /* VWViewController.h */,
 				097CCB441964015F004BC4C3 /* VWViewController.m */,
+				097CCB63196401B3004BC4C3 /* VWAddTaskViewController.h */,
+				097CCB64196401B3004BC4C3 /* VWAddTaskViewController.m */,
+				097CCB66196401C9004BC4C3 /* VWDetailTaskViewController.h */,
+				097CCB67196401C9004BC4C3 /* VWDetailTaskViewController.m */,
+				097CCB69196401DA004BC4C3 /* VWEditTaskViewController.h */,
+				097CCB6A196401DA004BC4C3 /* VWEditTaskViewController.m */,
 				097CCB461964015F004BC4C3 /* Images.xcassets */,
 				097CCB351964015F004BC4C3 /* Supporting Files */,
 			);
@@ -250,9 +265,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097CCB6B196401DA004BC4C3 /* VWEditTaskViewController.m in Sources */,
+				097CCB65196401B3004BC4C3 /* VWAddTaskViewController.m in Sources */,
 				097CCB451964015F004BC4C3 /* VWViewController.m in Sources */,
 				097CCB3B1964015F004BC4C3 /* main.m in Sources */,
 				097CCB3F1964015F004BC4C3 /* VWAppDelegate.m in Sources */,
+				097CCB68196401C9004BC4C3 /* VWDetailTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
