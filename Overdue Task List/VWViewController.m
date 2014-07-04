@@ -28,6 +28,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
     NSArray *tasksAsPropertyLists = [[NSUserDefaults standardUserDefaults] arrayForKey:TASK_OBJECTS_KEY];
     
     for(NSDictionary *dictionary in tasksAsPropertyLists)
@@ -108,6 +111,35 @@
 {
     VWTask *taskObject = [[VWTask alloc] initWithData:dictionary];
     return taskObject;
+}
+
+#pragma mark - UITableViewDataSource
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.taskObjects count];
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure cell...
+    VWTask *task = self.taskObjects[indexPath.row];
+    cell.textLabel.text = task.title;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *stringFromDate = [formatter stringFromDate:task.date];
+    cell.detailTextLabel.text = stringFromDate;
+    
+    return cell;
+    
 }
 
 @end
