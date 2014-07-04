@@ -29,6 +29,16 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.destinationViewController isKindOfClass:[VWAddTaskViewController class]])
+    {
+        VWAddTaskViewController *addTaskViewController = segue.destinationViewController;
+        
+        addTaskViewController.delegate = self;
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -41,6 +51,7 @@
 
 - (IBAction)addTaskBarButtonItemPressed:(UIBarButtonItem *)sender {
     
+    [self performSegueWithIdentifier:@"toAddTaskViewControllerSegue" sender:nil];
 }
 
 #pragma mark - VWAddTaskViewControllerDelegate
@@ -52,6 +63,8 @@
 -(void)didAddTask:(VWTask *)task
 {
     [self.taskObjects addObject:task];
+    
+    NSLog(@"%@", task.title);
     
     NSMutableArray *taskObjectsAsPropertyLists =
     [[[NSUserDefaults standardUserDefaults] arrayForKey:TASK_OBJECTS_KEY] mutableCopy];
