@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VWTask.h"
 
 @interface VWDetailTaskViewController : UIViewController
+
+@property (strong, nonatomic) VWTask *task;
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;

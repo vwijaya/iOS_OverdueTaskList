@@ -47,6 +47,11 @@
         VWAddTaskViewController *addTaskViewController = segue.destinationViewController;
         
         addTaskViewController.delegate = self;
+    } else if([segue.destinationViewController isKindOfClass:[VWDetailTaskViewController class]]) {
+        VWDetailTaskViewController * detailTaskViewController = segue.destinationViewController;
+        NSIndexPath *path = sender;
+        VWTask *taskObject = self.taskObjects[path.row];
+        detailTaskViewController.task = taskObject;
     }
 }
 
@@ -206,6 +211,11 @@
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
+}
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"toDetailTaskViewControllerSegue" sender:indexPath];
 }
 
 @end

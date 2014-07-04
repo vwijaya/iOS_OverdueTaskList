@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VWAddTaskViewController.h"
+#import "VWDetailTaskViewController.h"
 
 @interface VWViewController : UIViewController <VWAddTaskViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
