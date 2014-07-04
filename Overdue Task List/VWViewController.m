@@ -103,7 +103,7 @@
     
 }
 
-#pragma mark - helper methods
+#pragma mark - Helper methods
 -(NSDictionary *)taskObjectAsAPropertyList:(VWTask *)taskObject
 {
     NSDictionary *dictionary = @{TASK_TITLE : taskObject.title,
@@ -147,6 +147,17 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.tableView reloadData];
+}
+
+-(void)saveTasks
+{
+    NSMutableArray *taskObjectsAsPropertyLists = [[NSMutableArray alloc] init];
+    for(int x = 0; x < [self.taskObjects count]; x++) {
+        [taskObjectsAsPropertyLists addObject:[self taskObjectAsAPropertyList:self.taskObjects[x]]];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:taskObjectsAsPropertyLists forKey:TASK_OBJECTS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - UITableViewDataSource
@@ -231,6 +242,7 @@
     VWTask *taskObject = self.taskObjects[sourceIndexPath.row];
     [self.taskObjects removeObjectAtIndex:sourceIndexPath.row];
     [self.taskObjects insertObject:taskObject atIndex:destinationIndexPath.row];
+    [self saveTasks];
 }
 
 @end
