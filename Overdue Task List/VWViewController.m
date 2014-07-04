@@ -62,7 +62,10 @@
 }
 
 - (IBAction)reorderBarButtonItemPressed:(UIBarButtonItem *)sender {
-    
+    if(self.tableView.editing == YES)
+        [self.tableView setEditing:NO animated:YES];
+    else
+        [self.tableView setEditing:YES animated:YES];
 }
 
 - (IBAction)addTaskBarButtonItemPressed:(UIBarButtonItem *)sender {
@@ -216,6 +219,18 @@
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier:@"toDetailTaskViewControllerSegue" sender:indexPath];
+}
+
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    VWTask *taskObject = self.taskObjects[sourceIndexPath.row];
+    [self.taskObjects removeObjectAtIndex:sourceIndexPath.row];
+    [self.taskObjects insertObject:taskObject atIndex:destinationIndexPath.row];
 }
 
 @end
