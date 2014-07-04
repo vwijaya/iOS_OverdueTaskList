@@ -27,6 +27,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    NSArray *tasksAsPropertyLists = [[NSUserDefaults standardUserDefaults] arrayForKey:TASK_OBJECTS_KEY];
+    
+    for(NSDictionary *dictionary in tasksAsPropertyLists)
+    {
+        VWTask *taskObject = [self taskObjectForDictionary:dictionary];
+        [self.taskObjects addObject:taskObject];
+    }
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -94,6 +102,12 @@
                                  };
     return dictionary;
                                  
+}
+
+-(VWTask *)taskObjectForDictionary:(NSDictionary *)dictionary
+{
+    VWTask *taskObject = [[VWTask alloc] initWithData:dictionary];
+    return taskObject;
 }
 
 @end
