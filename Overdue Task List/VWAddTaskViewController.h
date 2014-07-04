@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VWTask.h"
+
+@protocol VWAddTaskViewControllerDelegate <NSObject>
+
+-(void)didCancel;
+-(void)didAddTask:(VWTask *)task;
+
+@end
 
 @interface VWAddTaskViewController : UIViewController
+
+@property (weak, nonatomic) id <VWAddTaskViewControllerDelegate> delegate;
 
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UITextView *textView;

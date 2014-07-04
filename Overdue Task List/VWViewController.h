@@ -10,6 +10,8 @@
 
 @interface VWViewController : UIViewController
 
+@property (strong, nonatomic) NSMutableArray *taskObjects;
+
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)reorderBarButtonItemPressed:(UIBarButtonItem *)sender;
