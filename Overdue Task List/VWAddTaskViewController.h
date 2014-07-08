@@ -16,7 +16,7 @@
 
 @end
 
-@interface VWAddTaskViewController : UIViewController
+@interface VWAddTaskViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) id <VWAddTaskViewControllerDelegate> delegate;
 
