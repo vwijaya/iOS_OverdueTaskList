@@ -11,7 +11,7 @@
 
 @protocol VWEditTaskViewControllerDelegate <NSObject>
 
--(void)didUpdateTask:(VWTask *)task;
+-(void)didUpdateTask;
 
 @end
 

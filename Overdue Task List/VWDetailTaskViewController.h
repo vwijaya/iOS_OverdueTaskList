@@ -10,7 +10,15 @@
 #import "VWTask.h"
 #import "VWEditTaskViewController.h"
 
+@protocol VWDetailTaskViewControllerDelegate <NSObject>
+
+-(void)updateTask;
+
+@end
+
 @interface VWDetailTaskViewController : UIViewController <VWEditTaskViewControllerDelegate>
+
+@property (weak, nonatomic) id <VWDetailTaskViewControllerDelegate> delegate;
 
 @property (strong, nonatomic) VWTask *task;
 

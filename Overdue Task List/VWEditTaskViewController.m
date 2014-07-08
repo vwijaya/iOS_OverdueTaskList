@@ -52,7 +52,7 @@
 
 - (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender {
     [self updateTask];
-    [self.delegate didUpdateTask:self.task];
+    [self.delegate didUpdateTask];
 }
 
 #pragma mark - Helper methods

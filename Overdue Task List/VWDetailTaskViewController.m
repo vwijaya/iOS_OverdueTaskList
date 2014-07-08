@@ -68,4 +68,19 @@
 - (IBAction)editBarButtonItemPressed:(UIBarButtonItem *)sender {
     [self performSegueWithIdentifier:@"toEditTaskViewControllerSegue" sender:nil];
 }
+
+-(void)didUpdateTask
+{
+    self.titleLabel.text = self.task.title;
+    self.detailLabel.text = self.task.description;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *stringFromDate = [formatter stringFromDate:self.task.date];
+    self.dateLabel.text = stringFromDate;
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    [self.delegate updateTask];
+}
+
 @end
