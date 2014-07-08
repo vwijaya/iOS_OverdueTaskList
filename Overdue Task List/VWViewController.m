@@ -52,6 +52,8 @@
         NSIndexPath *path = sender;
         VWTask *taskObject = self.taskObjects[path.row];
         detailTaskViewController.task = taskObject;
+        
+        detailTaskViewController.delegate = self;
     }
 }
 
@@ -101,6 +103,13 @@
     
     [self.tableView reloadData];
     
+}
+
+#pragma mark - VWDetailTaskViewControllerDelegate
+-(void)updateTask
+{
+    [self saveTasks];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Helper methods

@@ -10,7 +10,7 @@
 #import "VWAddTaskViewController.h"
 #import "VWDetailTaskViewController.h"
 
-@interface VWViewController : UIViewController <VWAddTaskViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface VWViewController : UIViewController <VWAddTaskViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, VWDetailTaskViewControllerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *taskObjects;
 
