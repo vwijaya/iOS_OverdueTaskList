@@ -37,6 +37,17 @@
     self.dateLabel.text = stringFromDate;
 }
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.destinationViewController isKindOfClass:[VWEditTaskViewController class]])
+    {
+        VWEditTaskViewController *editTaskViewController = segue.destinationViewController;
+        
+        editTaskViewController.task = self.task;
+        editTaskViewController.delegate = self;
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -55,5 +66,6 @@
 */
 
 - (IBAction)editBarButtonItemPressed:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"toEditTaskViewControllerSegue" sender:nil];
 }
 @end

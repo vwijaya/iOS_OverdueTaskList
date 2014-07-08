@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "VWTask.h"
+#import "VWEditTaskViewController.h"
 
-@interface VWDetailTaskViewController : UIViewController
+@interface VWDetailTaskViewController : UIViewController <VWEditTaskViewControllerDelegate>
 
 @property (strong, nonatomic) VWTask *task;
 
